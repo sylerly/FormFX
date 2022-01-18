@@ -89,7 +89,7 @@ public class ValUtil {
         }
         // ImageView
         else if (node instanceof ImageView)
-            return  ((ImageView)node).getImage().impl_getUrl();
+            return  ((ImageView)node).getImage().getUrl();
         // Label
         else if (node instanceof Label)
             return  ((Label)node).getText();
