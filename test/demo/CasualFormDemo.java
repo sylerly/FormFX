@@ -43,7 +43,7 @@ public class CasualFormDemo extends Application {
                         add("programmer");
                         add("student", true);
                         add("teacher");
-                    }}));
+                    }},true));
             separate();
             join("#about", "About:", Input.textArea("Write something about you"));
         }};

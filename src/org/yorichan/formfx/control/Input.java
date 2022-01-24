@@ -174,14 +174,17 @@ public class Input {
     }
 
     public static ComboBox<String> comboBox() {
-        return comboBox(-1, -1, null);
+        return comboBox(-1, -1, null,false);
     }
 
     public static ComboBox<String> comboBox(OptionList optionList) {
-        return comboBox(-1, -1, optionList);
+        return comboBox(-1, -1, optionList,false);
     }
 
-    public static ComboBox<String> comboBox(double width, double height, OptionList optionList) {
+    public static ComboBox<String> comboBox(OptionList optionList,boolean editable) {
+        return comboBox(-1, -1, optionList,editable);
+    }
+    public static ComboBox<String> comboBox(double width, double height, OptionList optionList,boolean editable) {
         ComboBox<String> comboBox = new ComboBox<>();
         for (int i = 0; i < optionList.size(); i++) {
             Option option = optionList.get(i);
@@ -189,6 +192,7 @@ public class Input {
             if (option.isSelected())
                 comboBox.setValue(option.getName());
         }
+        comboBox.setEditable(editable);
         if (width != -1)
             comboBox.setPrefWidth(width);
         if (height != -1)
